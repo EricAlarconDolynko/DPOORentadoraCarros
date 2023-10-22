@@ -7,14 +7,17 @@ public class MetodoPago {
 	private String tipoDePago;
 	private String numeroTarjetaCredito;
 	private String fechaVencimiento;
+	private boolean estadoTarjeta;
 	
 	//Constructors
 	
-	public MetodoPago(String tipoDePago, String numeroTarjetaCredito, String fechaVencimiento) {
+	public MetodoPago(String tipoDePago, String numeroTarjetaCredito, String fechaVencimiento
+			,boolean estadoTarjeta) {
 		super();
 		this.tipoDePago = tipoDePago;
 		this.numeroTarjetaCredito = numeroTarjetaCredito;
 		this.fechaVencimiento = fechaVencimiento;
+		this.estadoTarjeta = estadoTarjeta;
 	}
 	
 	//Getters & Setters
@@ -43,5 +46,13 @@ public class MetodoPago {
 		this.fechaVencimiento = fechaVencimiento;
 	}
 
+	public boolean isEstadoTarjeta() {
+		return estadoTarjeta;
+	}
+
+	public void setEstadoTarjeta(boolean estadoTarjeta) {
+		this.estadoTarjeta = estadoTarjeta;
+	}
+	
 
 }

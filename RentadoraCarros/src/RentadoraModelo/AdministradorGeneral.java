@@ -4,9 +4,9 @@ public class AdministradorGeneral extends Usuario{
 
 	//Constructor
 	
-	public AdministradorGeneral(String idUsuario, String nombre, String fechaDeNacimiento, String nacionalidad,
+	public AdministradorGeneral(String nombre, String fechaDeNacimiento, String nacionalidad,
 			String documentoIdentidad, String imagen, String rol) {
-		super(idUsuario, nombre, fechaDeNacimiento, nacionalidad, documentoIdentidad, imagen, rol);
+		super (nombre, fechaDeNacimiento, nacionalidad, documentoIdentidad, imagen, rol);
 	}
 
 	//Methods

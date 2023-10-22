@@ -4,7 +4,6 @@ public class Usuario {
 	
 	//Attributes
 	
-	private String idUsuario;
 	private String nombre;
 	private String fechaDeNacimiento;
 	private String nacionalidad;
@@ -14,10 +13,9 @@ public class Usuario {
 	
 	//Constructors
 	
-	public Usuario(String idUsuario, String nombre, String fechaDeNacimiento, String nacionalidad,
+	public Usuario(String nombre, String fechaDeNacimiento, String nacionalidad,
 			String documentoIdentidad, String imagen, String rol) {
 		
-		this.idUsuario = idUsuario;
 		this.nombre = nombre;
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.nacionalidad = nacionalidad;
@@ -26,13 +24,7 @@ public class Usuario {
 		this.rol = rol;
 	}
 	//Getters y Setters
-	
-	public String getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}

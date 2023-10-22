@@ -9,10 +9,9 @@ public class AdministradorLocal extends Empleado{
 
 	//Constructor
 	
-	public AdministradorLocal(String idUsuario, String nombre, String fechaDeNacimiento, String nacionalidad,
-			String documentoIdentidad, String imagen, String rol, String idEmpleado, String sede, boolean activo) {
-		super(idUsuario, nombre, fechaDeNacimiento, nacionalidad, documentoIdentidad, imagen, rol, idEmpleado, sede,
-				activo);
+	public AdministradorLocal(String nombre, String fechaDeNacimiento, String nacionalidad,
+			String documentoIdentidad, String imagen, String rol, String sede, boolean activo) {
+		super(nombre, fechaDeNacimiento, nacionalidad, documentoIdentidad, imagen, rol, sede, activo);
 		this.listaEmpleados = new ArrayList<Empleado>();
 	}
 

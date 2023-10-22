@@ -1,5 +1,9 @@
 package RentadoraModelo;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.Properties;
+import java.util.Set;
 
 public class Sede {
 	
@@ -9,22 +13,19 @@ public class Sede {
 	private String ubicacion;
 	private String horaApertura;
 	private String horaCierre;
-	private String horaDeAtencion;
 	private ArrayList<CarroNoDisponible> noDisponibles;
 	private ArrayList<Vehiculo> disponibles;
 	
 	//Constructor
 	
-	public Sede(String nombre, String ubicacion, String horaApertura, String horaCierre, String horaDeAtencion,
-			ArrayList<CarroNoDisponible> noDisponibles, ArrayList<Vehiculo> disponibles) {
+	public Sede(String nombre, String ubicacion, String horaApertura, String horaCierre) {
 		super();
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.horaApertura = horaApertura;
 		this.horaCierre = horaCierre;
-		this.horaDeAtencion = horaDeAtencion;
-		this.noDisponibles = noDisponibles;
-		this.disponibles = disponibles;
+		this.noDisponibles = new ArrayList<CarroNoDisponible>();
+		this.disponibles = new ArrayList<Vehiculo>();
 	}
 	
 	
@@ -77,28 +78,39 @@ public class Sede {
 		this.horaCierre = horaCierre;
 	}
 
-
-
-	public String getHoraDeAtencion() {
-		return horaDeAtencion;
-	}
-
-
-
-	public void setHoraDeAtencion(String horaDeAtencion) {
-		this.horaDeAtencion = horaDeAtencion;
-	}
-
-
-
-	public void setNoDisponibles(ArrayList<CarroNoDisponible> noDisponibles) {
-		this.noDisponibles = noDisponibles;
-	}
-
-
-
-	public void setDisponibles(ArrayList<Vehiculo> disponibles) {
-		this.disponibles = disponibles;
+	public void setDisponibilidades() {
+		Properties pVehiculos = new Properties();
+		try {
+		pVehiculos.load(new FileInputStream(new File("./RentadoraStorage/Sedes.txt")));
+		Set<Object> placaVehiculo = pVehiculos.keySet();
+		
+		for (Object placaActual: placaVehiculo) {
+			String placa = (String) placaActual;
+			String stringVehiculo = (String) pVehiculos.get("RadiatorSping");
+			String[] infoVehiculo = stringVehiculo.split(";");
+			Categoria categoriaVehiculo = new Categoria(infoVehiculo[10]);
+			categoriaVehiculo.setMejorCategoria(categoriaVehiculo);
+			
+			Vehiculo vehiculo = new Vehiculo(infoVehiculo[0],infoVehiculo[1],infoVehiculo[2],
+											infoVehiculo[3],infoVehiculo[4],infoVehiculo[5],
+											Integer.parseInt(infoVehiculo[6]),
+				Boolean.parseBoolean(infoVehiculo[7]), Boolean.parseBoolean(infoVehiculo[8]),
+				infoVehiculo[9],categoriaVehiculo);
+			
+			if (Boolean.parseBoolean(infoVehiculo[8]) == true) {
+				noDisponibles.add((CarroNoDisponible) vehiculo);
+			}
+			else if (Boolean.parseBoolean(infoVehiculo[8]) == false) {
+				
+			}
+			
+		}
+		
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 

@@ -9,25 +9,26 @@ public class Vehiculo
 	private String modelo;
 	private String color;
 	private String tipoDeTransmision;
-	private String combustuble;
+	private String combustible;
 	private int capacidad;
-	private boolean alquilado;
+	private boolean reservado;
+	private boolean disponible;
 	private String sede;	
 	private Categoria categoria;
 	
 	//Constructor
 	
 	public Vehiculo(String placa, String marca, String modelo, String color, String tipoDeTransmision,
-			String combustuble, int capacidad, boolean alquilado, String sede, Categoria categoria) {
-		super();
+			String combustible, int capacidad, boolean reservado,boolean disponible,String sede, Categoria categoria) {
 		this.placa = placa;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.color = color;
 		this.tipoDeTransmision = tipoDeTransmision;
-		this.combustuble = combustuble;
+		this.combustible = combustible;
 		this.capacidad = capacidad;
-		this.alquilado = alquilado;
+		this.reservado = reservado;
+		this.disponible = disponible;
 		this.sede = sede;
 		this.categoria = categoria;
 	}
@@ -74,12 +75,12 @@ public class Vehiculo
 		this.tipoDeTransmision = tipoDeTransmision;
 	}
 
-	public String getCombustuble() {
-		return combustuble;
+	public String getCombustible() {
+		return combustible;
 	}
 
-	public void setCombustuble(String combustuble) {
-		this.combustuble = combustuble;
+	public void setCombustible(String combustible) {
+		this.combustible = combustible;
 	}
 
 	public int getCapacidad() {
@@ -90,12 +91,8 @@ public class Vehiculo
 		this.capacidad = capacidad;
 	}
 
-	public boolean isAlquilado() {
-		return alquilado;
-	}
-
-	public void setAlquilado(boolean alquilado) {
-		this.alquilado = alquilado;
+	public void setAlquilado(boolean reservado) {
+		this.reservado = reservado;
 	}
 
 	public String getSede() {
@@ -114,8 +111,25 @@ public class Vehiculo
 		this.categoria = categoria;
 	}	
 	
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+	
+	public boolean isReservado() {
+		return reservado;
+	}
+
+	public void setReservado(boolean reservado) {
+		this.reservado = reservado;
+	}
 	//Methods
 	
+	
+
 	public void getEstado() {
 	}
 	

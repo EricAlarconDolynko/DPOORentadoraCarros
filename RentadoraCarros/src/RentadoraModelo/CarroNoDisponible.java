@@ -10,12 +10,27 @@ public class CarroNoDisponible extends Vehiculo{
 	//Constructor
 	
 	public CarroNoDisponible(String placa, String marca, String modelo, String color, String tipoDeTransmision,
-			String combustuble, int capacidad, boolean alquilado, String sede, Categoria categoria,
-			String motivoNoDisponible, String fechaRehabilitado) {
-		super(placa, marca, modelo, color, tipoDeTransmision, combustuble, capacidad, alquilado, sede, categoria);
+			String combustible, int capacidad, boolean reservado,boolean alquilado, String sede, Categoria categoria) {
+		super(placa, marca, modelo, color, tipoDeTransmision, combustible, capacidad,reservado, alquilado, sede, categoria);
 		this.motivoNoDisponible = motivoNoDisponible;
+		
+	}
+
+	public String getMotivoNoDisponible() {
+		return motivoNoDisponible;
+	}
+
+	public void setMotivoNoDisponible(String motivoNoDisponible) {
+		this.motivoNoDisponible = motivoNoDisponible;
+	}
+
+	public String getFechaRehabilitado() {
+		return fechaRehabilitado;
+	}
+
+	public void setFechaRehabilitado(String fechaRehabilitado) {
 		this.fechaRehabilitado = fechaRehabilitado;
 	}
 		
-
+	
 }

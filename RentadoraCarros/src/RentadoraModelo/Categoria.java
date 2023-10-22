@@ -10,7 +10,6 @@ public class Categoria
 	//Constructor
 	
 	public Categoria(String nombre) {
-		super();
 		this.nombre = nombre;
 	}
 	
@@ -28,9 +27,29 @@ public class Categoria
 		return mejorCategoria;
 	}
 
-	public void setMejorCategoria(Categoria mejorCategoria) {
-		this.mejorCategoria = mejorCategoria;
+	public void setMejorCategoria(Categoria categoriaActual) {
+		if (categoriaActual.getNombre().equals("lujo")) {
+			this.mejorCategoria = null;
+		}
+		else if (categoriaActual.getNombre().equals("clasico")) {
+			Categoria CategoriaRecursive = new Categoria("lujo");
+			setMejorCategoria(CategoriaRecursive);
+			this.mejorCategoria = CategoriaRecursive;
+		}
+		else if (categoriaActual.getNombre().equals("todoterreno")) {
+			Categoria CategoriaRecursive = new Categoria("clasico");
+			setMejorCategoria(CategoriaRecursive);
+			this.mejorCategoria = CategoriaRecursive;
+		}
+		else if (categoriaActual.getNombre().equals("vans")) {
+			Categoria CategoriaRecursive = new Categoria("todoterreno");
+			setMejorCategoria(CategoriaRecursive);
+			this.mejorCategoria = CategoriaRecursive;
+		}
+		else if (categoriaActual.getNombre().equals("tractor")) {
+			Categoria CategoriaRecursive = new Categoria("vans");
+			setMejorCategoria(CategoriaRecursive);
+			this.mejorCategoria = CategoriaRecursive;
+		}
 	}
-	
-
 }

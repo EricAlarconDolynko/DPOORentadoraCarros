@@ -1,0 +1,6 @@
+AEW123=AEW123,chevrolet;aveo;gris;automatica;corriente;5;false;true;RadiatorSpring;suv
+EQR485=EQR485,renault;duster;negro;manual;gasolina;5;false;true;3;Carburetor Canyon;vans
+WXY000=WXY000,tesla;y;gris;automatica;electrico;5;false;true;2;Emeryville;lujo
+QTU753=QTU753,bmw;x5;azul;automatica;hibrido;5;false;true;2;Carburetor Canyon;clasico
+WOT743=WOT743,foton;vans;rosa;manual;gasolina;8;false;true;1;RadiatorSpring;tractor
+IEW862=IEW862,fiat;fiat500;azul;manual;gasolina;4;false;true;3;MotorSpeedway;todoterreno
